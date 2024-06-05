@@ -1,0 +1,196 @@
+<!-- Russo's main page -->
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/russo.png">
+        <link rel="stylesheet" href="russo.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Russo's main page</title>
+    </head>
+    <body>
+<!--  Navigation bar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="main" href="#">Russo's main page</a>
+                    </li>
+                </ul>
+                <div class="container mt-3">
+                    <div class="alert alert-success alert-dismissible" id="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>Sikeres!</strong> Az oldal sikeresen betöltve!
+                    </div>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="profil" href="#">Profil</a>
+                    </li>
+                </ul>
+                <img src="/images/russo.png" alt="Logo"  id="logo" class="rounded-pill"><ul class="navbar-nav">
+                </div>
+            </nav>
+<!-- Navbar end -->
+            <div class="row pt-5" id="buttons">
+                <div class="col">
+<!-- Clock starts -->
+                    <div id="clock"></div>
+                    <div class="weather-container">
+                        <div class="weather-box">
+                            <h2 id="temperature"></h2>
+                            <p id="condition"></p>
+                            <p id="location"></p>
+                        </div>
+                        <input type="text" placeholder="Adj meg egy várost..." id="search-bar">
+                        <button id="search-btn">Keresés</button>
+<!-- Clock end -->
+<!-- Spotify starts -->
+                    </div>
+                    <iframe id="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4rEjfaJyhxEirG7MrW28ei?utm_source=generator" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button id="button_spoti1" type="button" class="spotify">
+                        <p id="names_spotify" class="one">Russo</p>
+                    </button>
+                    <button id="button_spoti2" type="button" class="spotify">
+                        <p id="names_spotify">HB</p>
+                    </button>
+                    <button id="button_spoti3" type="button" class="spotify">
+                        <p id="names_spotify">BBB</p>
+                    </button>
+                    <button id="button_spoti4" type="button" class="spotify">
+                        <p id="names_spotify" class="one">Muzsikáá</p>
+                    </button>
+                    <button id="button_spoti5" type="button" class="spotify">
+                        <p id="names_spotify">joido</p>
+                    </button>
+                    <button id="button_spoti6" type="button" class="spotify">
+                        <p id="names_spotify" class="fifteen">Faszkivanmar</p>
+                    </button>
+<!--  Spotify ends -->
+<!-- Calendar starts -->
+                    <div class="calendar">
+                        <div class="top">
+                        <button id="button_calendar1" type="button" class="btn_calendar"></button>
+                        <h2>Március</h2>
+                        <button id="button_calendar2" type="button" class="btn_calendar"></button>
+                    </div>
+                    </div>
+<!-- Calendar end -->
+                </div>
+                    <div class="col"></div>
+                <div class="col">
+<!-- Google search starts -->
+                    <form id="google-search-form">
+                        <img src="/images/google.png" alt="">
+                        <input type="text" id="google-search-input" placeholder="Keress a Google-el...">
+                        <button type="submit" id="google-search-button"><i class="fas fa-search"></i></button>
+                    </form>
+<!--  Google search ends -->
+<!-- Buttons starts -->
+                    <button type="button" id="button_discord" class="btn">
+                        <a id="press" href="https://discord.com/channels/@me"></a>
+                        <p id="names">Discord</p>
+                    </button>
+                    <button type="button" id="button_kreta" class="btn">
+                        <a id="press" href="https://idp.e-kreta.hu/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dkreta-web%26response_type%3Dcode%26scope%3Dopenid%2520email%26state%3DOpenIdConnect.AuthenticationProperties%253D9wZ4t8OXztYogXjDsqvYypvKnvbI5eO2lYIMuKacLLARpLJntaaNWBKluc14KEnyhy5-0LvtQWgDomTiYmn9roOTaQw75Cfa90XTvQT0tJo1GFiOhgdG5dUUs1aG4vJwacR68zLmtRRy5PWZZE6l4A%26response_mode%3Dform_post%26nonce%3D638458475080839155.YzI0NTRkYTgtNzU2Yi00OGY0LWE2MjQtNGMwYjY2OWIzZjMzYTg4MTM2OGItNjZiYS00ZjE3LWI2MzUtZjA0ZjkwOTEwYTZi%26institute_code%3Dszbi-szeged%26institute_data%3DeyJuZXh0X3VwZGF0ZV9kYXRlX3RpbWUiOiIyMDI0LjAzLjEyLiAyMjowMCIsImlzX3N6aXJfaW5zdGl0dXRlIjpmYWxzZSwiaXNfbGljZW5jZV92YWxpZCI6dHJ1ZSwiaXNfYXJjaGl2ZSI6ZmFsc2UsImlzX2Nzb2trZW50ZXR0X2dvbmR2aXNlbG8iOnRydWUsImlzX2ludGV6bWVueV9yb3ZpZG5ldiI6dHJ1ZSwiaXNfc3VjY2Vzc19hdXRob3JpemVkX2RhdGUiOmZhbHNlfQ%253D%253D%26prompt%3Dlogin%26redirect_uri%3Dhttps%253A%252F%252Fszbi-szeged.e-kreta.hu%26x-client-SKU%3DID_NET461%26x-client-ver%3D5.3.0.0%26suppressed_prompt%3Dlogin"></a>
+                        <p id="names">Kréta</p>
+                    </button>
+                    <button type="button" id="button_gmail" class="btn">
+                        <a id="press" href="https://mail.google.com/mail/u/0/#inbox"></a>
+                        <p id="names">Gmail</p>
+                    </button>
+                    <button type="button" id="button_youtube" class="btn">
+                        <a id="press" href="https://www.youtube.com"></a>
+                        <p id="names">YouTube</p>
+                    </button>
+                    <button type="button" id="button_messenger" class="btn">
+                        <a id="press" href="https://www.messenger.com/t/100059782711508/"></a>
+                        <p id="names" class="ten">Messenger</p>
+                    </button>
+                    <button type="button" id="button_spotify" class="btn">
+                        <a id="press" href="https://open.spotify.com"></a>
+                        <p id="names">Spotify</p>
+                    </button>
+                    <button type="button" id="button_icloud" class="btn">
+                        <a id="press" href="https://www.icloud.com"></a>
+                        <p id="names">iCloud</p>
+                    </button>
+                    <button type="button" id="button_github" class="btn">
+                        <a id="press" href="https://github.com"></a>
+                        <p id="names">GitHub</p>
+                    </button>
+                    <button type="button" id="button_ncore" class="btn">
+                        <a id="press" href="https://ncore.pro/index.php"></a>
+                        <p id="names">nCore</p>
+                    </button>
+                    <button type="button" id="button_facebook" class="btn">
+                        <a id="press" href="https://www.facebook.com"></a>
+                        <p id="names" class="seven">Facebook</p>
+                    </button>
+                    <button type="button" id="button_tiktok" class="btn">
+                        <a id="press" href="https://www.tiktok.com"></a>
+                        <p id="names">TikTok</p>
+                    </button>
+                    <button type="button" id="button_pizzafutar" class="btn">
+                        <a id="press" href="https://pizzafutar.co.hu"></a>
+                        <p id="names" class="seven">Pizzafutár</p>
+                    </button>
+                    <button type="button" id="button_instagram" class="btn">
+                        <a id="press" href="https://www.instagram.com"></a>
+                        <p id="names" class="ten">Instagram</p>
+                    </button>
+                    <button type="button" id="button_w3schools" class="btn">
+                        <a id="press" href="https://www.w3schools.com"></a>
+                        <p id="names" class="seven">w3schools</p>
+                    </button>
+                    <button type="button" id="button_classroom" class="btn">
+                        <a id="press" href="https://classroom.google.com/u/1/"></a>
+                        <p id="names" class="ten">Classroom</p>
+                    </button>
+                    <button type="button" id="button_chatgpt" class="btn">
+                        <a id="press" href="https://chat.openai.com"></a>
+                        <p id="names" class="five">ChatGPT</p>
+                    </button>
+                    <button type="button" id="button_trello" class="btn">
+                        <a id="press" href="https://trello.com/u/kristofbodo1/boards"></a>
+                        <p id="names">Trello</p>
+                    </button>
+                    <button type="button" id="button_steam" class="btn">
+                        <a id="press" href="https://store.steampowered.com/?l=hungarian"></a>
+                        <p id="names">Steam</p>
+                    </button>
+                    <button type="button" id="button_fonts" class="btn">
+                        <a id="press" href="https://fonts.google.com"></a>
+                        <p id="names">Fonts</p>
+                    </button>
+                    <button type="button" id="button_coolors" class="btn">
+                        <a id="press" href="https://coolors.co"></a>
+                        <p id="names">Coolors</p>
+                    </button>
+                    <button type="button" id="button_twitch" class="btn">
+                        <a id="press" href="https://www.twitch.tv"></a>
+                        <p id="names">Twitch</p>
+                    </button>
+                    <button type="button" id="button_maps" class="btn">
+                        <a id="press" href="https://www.google.com/maps"></a>
+                        <p id="names">Maps</p>
+                    </button>
+                    <button type="button" id="button_netflix" class="btn">
+                        <a id="press" href="https://www.netflix.com/browse"></a>
+                        <p id="names">Netflix</p>
+                    </button>
+                    <button type="button" id="button_otpbank" class="btn">
+                        <a id="press" href="https://internetbank.otpbank.hu/auth/bejelentkezes?url=%2Ffooldal"></a>
+                        <p id="names" class="seven">OTP Bank</p>
+                    </button>
+                    <button type="button" id="button_szin" class="btn">
+                        <a id="press" href="https://szin.org/?gad_source=1&gclid=Cj0KCQjw-r-vBhC-ARIsAGgUO2CUpnego0uCJy9LxYhYgsocU2EcmRmRq0auwV9AelwjR2ZmecXFsAkaAkV6EALw_wcB"></a>
+                        <p id="names">SZIN</p>
+                    </button>
+                </div>
+            </div>
+        <script src="russo.js"></script>
+    </body> 
+    </html>
